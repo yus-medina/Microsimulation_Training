@@ -30,13 +30,22 @@ def net_salary_income(SALARIES, Income_Salary):
     Income_Salary = SALARIES 
     return Income_Salary
 
+@iterate_jit(nopython=True)
+def calc_income_house_property(HP_deduction, INCOME_HP, Income_House_Property):
+    """
+    Compute income from House Property.
+    """
+    Income_House_Property=INCOME_HP-HP_deduction
+    if Income_House_Property<0:
+        Income_House_Property=0
+    return Income_House_Property
 
 @iterate_jit(nopython=True)
-def gross_total_income(Income_Salary, GTI):
+def gross_total_income(Income_Salary, GTI, Income_House_Property):
     """
     Compute GTI including capital gains amounts taxed at special rates.
     """
-    GTI = Income_Salary
+    GTI = Income_Salary+Income_House_Property
     return GTI
 
 

@@ -78,9 +78,9 @@ class Records(object):
     PITCSV_YEAR = 2017
 
     CUR_PATH = os.path.abspath(os.path.dirname(__file__))
-    PIT_DATA_FILENAME = 'pit_training.csv'
-    PIT_WEIGHTS_FILENAME = 'pit_weights_training.csv'
-    VAR_INFO_FILENAME = 'records_variables_training.json'
+    PIT_DATA_FILENAME = 'pit_training_INA.csv'
+    PIT_WEIGHTS_FILENAME = 'pit_weights_training_INA.csv'
+    VAR_INFO_FILENAME = 'records_variables_training_INA.json'
 
     def __init__(self,
                  data=PIT_DATA_FILENAME,
